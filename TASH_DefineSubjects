@@ -1,0 +1,2 @@
+#!/bin/csh
+set SUBJECTS = (fs_002GNV_V01)
