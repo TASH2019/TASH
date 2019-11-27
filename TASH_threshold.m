@@ -53,7 +53,7 @@ for isub = 1:length(subjectsID)
             disp(['saving ', fname]);
             write_wfile(fname, new_w,v);
             
-            %%% label
+            %%% reading label
             
      VertexNum = [];
      VertexPos = [];
@@ -74,6 +74,8 @@ for isub = 1:length(subjectsID)
         VertexVal(i) = resp{5};
      end
      fclose(fid);
+     
+     %% Saving results
      
      vcurv_index = find(new_curv~=0)-1;
      NumTotalVertex=length(vcurv_index);

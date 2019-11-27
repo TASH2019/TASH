@@ -88,7 +88,9 @@ for isub = 1:length(subjectsID)
              stopFlag=0;
          end      
         
-     end   
+     end 
+     
+     %% Saving results
      
      fname = fullfile(D_load,[side, '_masked_thr0', th_string(3:end), suff1, '_expanded', expanded, suff2, '_erosion_dilatation_', erosion_dilatation_order, '.curv']);
      disp(['saving ', fname]);

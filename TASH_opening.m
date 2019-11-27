@@ -1,9 +1,8 @@
 function TASH_opening(side,D)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% things to change before running the script
 subjectsID = TASH_DefineSubjects;
-suff = '_Complete'; %'_Complete';% %suff = ''; for first half
+suff = '_Complete';
 erosion_order_total=2;
 dilatation_order_total=2;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,6 +43,7 @@ for isub = 1:length(subjectsID)
      facesSurface_final(sum(facesSurface_new,2)==0,:) = [];      
      idxFaces = find(~(sum(facesSurface_new,2)==0));
  
+     %% Opening
      facesSurface_erosion=zeros(size(facesSurface_final,1),size(facesSurface_final,2),erosion_order_total+1);
      facesSurface_erosion(:,:,1)=facesSurface_final;  
      for erosion_order=1:erosion_order_total
@@ -103,6 +103,7 @@ for isub = 1:length(subjectsID)
      
      curv=curv_erosion_dilatation;
      
+     %% Saving results
      %fname = fullfile(D_load,[side, '_maskedLTCI', suff, '_erosion_dilatation_', erosion_dilatation_order,'.curv']);
      fname = fullfile(D_load,[side, '_maskedLT', suff, '_erosion_dilatation_', erosion_dilatation_order,'.curv']);
      disp(['saving ', fname]);
